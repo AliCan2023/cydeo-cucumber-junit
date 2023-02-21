@@ -18,7 +18,7 @@ When you run your tests, Cucumber reads your feature files, matches the steps in
 Here's an example of a feature file and its corresponding step definition:
 
      */
-    //Feature file (example.feature):
+
 
 
 
