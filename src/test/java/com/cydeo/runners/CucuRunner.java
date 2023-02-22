@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@wip_ali"
 //        tags = "@student"// only one scenario executed;
 //        tags = "@todayIsSunnyDay"// only one scenario executed;
 //        tags = "@librarian or @admin "// both of them are executed once checked the condition matches;
