@@ -10,6 +10,8 @@ import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import static java.time.Duration.*;
+
 public class BrowserUtilities {
 
     public static void sleep(int second) {
@@ -67,7 +69,7 @@ public class BrowserUtilities {
     public static void waitForInvisibilityOf(WebElement webElement){
 
         Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
 }

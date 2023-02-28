@@ -12,7 +12,7 @@ Feature:  examples of Cucumber data table implementations
       | Mango    |
       | Grape    |
 
-  @wip
+
   Scenario: Shopping List of fruit I am buying
 
     Then user should see fruit I am buying
