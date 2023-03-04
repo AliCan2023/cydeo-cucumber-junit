@@ -4,9 +4,12 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -61,6 +64,48 @@ public class BrowserUtilities {
     public static void verifyTitle(String expectedTitle){
 
         Assert.assertEquals(Driver.getDriver().getTitle(),expectedTitle);
+
+    }
+
+    /**
+     * This method will accept a String as expected value and verify actual URL CONTAINS the value.
+     * @param expectedInURL
+     */
+
+    public static void verifyURLContains(String expectedInURL){
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
+    }
+
+    /**
+     * This method accepts dropdown as a WebElement
+     * and return all the options' text as a list of string;
+     * @param dropdownElement
+     * @return List<String> actualOptionsAsString
+     */
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
+        Select select = new Select(dropdownElement);
+        //List of all actual  Options as webElements;
+        List<WebElement> actualOptionsAsWebElement=  select.getOptions();
+
+        //create a list of String and pass all actual webElement options' string into new list;
+        List<String> actualOptionsAsString = new ArrayList<>();
+
+        for (WebElement each : actualOptionsAsWebElement) {
+
+            actualOptionsAsString.add(each.getText());
+        }
+        return actualOptionsAsString;
+    }
+
+
+    public static void clickRadioButton(List<WebElement> radioButtons,String attributeValue){
+
+
+        for (WebElement each : radioButtons) {
+            if (each.getAttribute("value").equals(attributeValue)){
+                each.click();
+            }
+        }
 
     }
 

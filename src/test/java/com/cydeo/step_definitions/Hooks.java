@@ -37,18 +37,18 @@ public class Hooks {
         }
 
 
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
 //        System.out.println("====> Closing browsers using cucumber @After ");
 //        System.out.println("====>Scenario ended/Take screenshot if failed!");
     }
 
-        //@BeforeStep
+        @BeforeStep
         public void setupStep () {
             System.out.println("------> Applying setup using cucumber @BeforeStep------->");
         }
 
-        //@AfterStep
+        @AfterStep
         public void afterStep () {
             System.out.println("======> Applying tearDown using @AfterStep====>");
         }
