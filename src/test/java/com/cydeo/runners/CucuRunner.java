@@ -8,12 +8,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "html:target/cucumber-reports.html",
-                "rerun:target/return.txt"
+                "rerun:target/rerun.txt",
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@femaleScientists"
+        tags = "@smoke"
 //        tags = "@student"// only one scenario executed;
 //        tags = "@todayIsSunnyDay"// only one scenario executed;
 //        tags = "@librarian or @admin "// both of them are executed once checked the condition matches;
