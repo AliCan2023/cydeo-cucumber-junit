@@ -15,6 +15,11 @@ import java.util.Map;
 
 public class dataTablesStepDefinitions {
 
+    @Given("User is on the dropdowns page of practice tool")
+    public void user_is_on_the_dropdowns_page_of_practice_tool() {
+        Driver.getDriver().get("https://practice.cydeo.com/dropdown");
+    }
+
     @Then("user should see fruit I like")
     public void user_should_see_fruit_i_like(List<String> fruits) {
 
@@ -30,12 +35,6 @@ public class dataTablesStepDefinitions {
     }
 
 
-
-
-    @Given("User is on the dropdowns page of practice tool")
-    public void user_is_on_the_dropdowns_page_of_practice_tool() {
-        Driver.getDriver().get("https://practice.cydeo.com/dropdown");
-    }
 
     DropdownsPage dropdownsPage = new DropdownsPage();
     @Then("User should see below info in month dropdown")
