@@ -25,6 +25,7 @@ public class BrowserUtilities {
         }
 
     }
+    //Everything starts from here
       /*
     This method will accept int(in seconds) and execute Thread.sleep
     for given duration
